@@ -20,7 +20,8 @@ int main(int argc, char *argv[])
 	}
 	if (file == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file\n");
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		fclose(file);
 		exit(EXIT_FAILURE);
 	}
 	while (fscanf(file, "%s", opcode) != EOF)
@@ -36,7 +37,7 @@ int main(int argc, char *argv[])
 			monty_push(&monty_stack, arg, line_no);
 		}
 		else if (strcmp(opcode, "pall") == 0)
-			monty_pall(&monty_stack, line_no);
+			monty_pall(&monty_stack);
 		else
 		{
 			fprintf(stderr, "L%d: Error: unknown instruction %s\n", line_no, opcode);

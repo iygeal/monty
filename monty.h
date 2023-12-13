@@ -39,6 +39,6 @@ typedef struct instruction_s
 extern stack_t *monty_stack;
 
 void monty_push(stack_t **monty_stack, int value, unsigned int line_number);
-void monty_pall(stack_t **monty_stack, unsigned int line_number);
+void monty_pall(stack_t **monty_stack);
 
 #endif
