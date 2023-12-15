@@ -10,6 +10,7 @@ instruction_t *monty_instructions(void)
 		{"pall", pall},
 		{"pop", pop},
 		{"pint", pint},
+		{"swap", swap},
 		{NULL, NULL} /* Marks the end of the instruction set */
 	};
 	return (instructions);
