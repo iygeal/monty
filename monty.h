@@ -41,13 +41,17 @@ typedef struct instruction_s
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-void print_unknown_instruction_error(unsigned int line_number, const char *opcode);
-instruction_t *find_instruction(instruction_t *instructions, const char *opcode);
-void interpret_instruction(stack_t **stack, instruction_t *instructions, char *line, unsigned int line_number);
+void print_unknown_instruction_error(unsigned int line_number,
+const char *opcode);
+instruction_t *find_instruction(instruction_t *instructions,
+const char *opcode);
+void interpret_instruction(stack_t **stack, instruction_t *instructions,
+char *line, unsigned int line_number);
 void interpret_file(const char *filename);
 instruction_t *monty_instructions(void);
 void free_stack(stack_t *stack);
 int is_numeric(const char *str);
 void pop(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 
 #endif
