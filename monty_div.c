@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * div - Divides the second top element of the stack by the top element.
+ * monty_div - Divides the second top element of the stack by the top element.
  * @stack: Pointer to a pointer to the stack
  * @line_number: Line number in the file
  */
-void div(stack_t **stack, unsigned int line_number)
+void monty_div(stack_t **stack, unsigned int line_number)
 {
 	int ratio;
 	stack_t *temp;
