@@ -8,7 +8,8 @@ instruction_t *monty_instructions(void)
 	static instruction_t instructions[] = {
 		{"push", push},
 		{"pall", pall},
-		{NULL, NULL} /* Mark the end of the instruction set */
+		{"pop", pop},
+		{NULL, NULL} /* Marks the end of the instruction set */
 	};
 	return (instructions);
 }

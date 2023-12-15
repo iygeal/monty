@@ -48,5 +48,6 @@ void interpret_file(const char *filename);
 instruction_t *monty_instructions(void);
 void free_stack(stack_t *stack);
 int is_numeric(const char *str);
+void pop(stack_t **stack, unsigned int line_number);
 
 #endif
