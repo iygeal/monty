@@ -5,6 +5,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <ctype.h>
+
+#define MAX_LINE_LENGTH 1024
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -36,7 +39,14 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void monty_push(stack_t **stack, int value, unsigned int line_number);
-void monty_pall(stack_t **stack);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void print_unknown_instruction_error(unsigned int line_number, const char *opcode);
+instruction_t *find_instruction(instruction_t *instructions, const char *opcode);
+void interpret_instruction(stack_t **stack, instruction_t *instructions, char *line, unsigned int line_number);
+void interpret_file(const char *filename);
+instruction_t *monty_instructions(void);
+void free_stack(stack_t *stack);
+int is_numeric(const char *str);
 
 #endif
