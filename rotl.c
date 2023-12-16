@@ -9,8 +9,6 @@ void rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp, *last;
 
-	(void)line_number;
-
 	/* Check if the stack is empty or has only one element */
 	if (*stack == NULL || (*stack)->next == NULL)
 		return;
@@ -20,7 +18,7 @@ void rotl(stack_t **stack, unsigned int line_number)
 
 	/* Update the stack to point to the second element */
 	*stack = (*stack)->next;
-	(*stack)->prev = NULL;  /* Disconnect temp from the new top */
+	(*stack)->prev = NULL; /* Disconnect temp from the new top */
 
 	/* Find the last node in the updated stack */
 	last = *stack;
@@ -28,6 +26,8 @@ void rotl(stack_t **stack, unsigned int line_number)
 		last = last->next; /* Move to the last node */
 
 	/* Make the original top of the stack the last node */
-	temp->prev = last;   /* Connect temp to the new last node */
-	temp->next = NULL;   /* Set temp as the new top of the stack */
+	temp->prev = last; /* Connect temp to the new last node */
+	temp->next = NULL; /* Set temp as the new top of the stack */
+	last->next = temp; /* Make temp the new last node */
+	temp->prev = last; /* Set last as the new previous node for temp */
 }
