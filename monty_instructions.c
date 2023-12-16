@@ -17,6 +17,7 @@ instruction_t *monty_instructions(void)
 		{"div", monty_div},
 		{"mul", monty_mul},
 		{"mod", monty_mod},
+		{"pchar", pchar},
 		{NULL, NULL} /* Marks the end of the instruction set */
 	};
 	return (instructions);
