@@ -9,6 +9,8 @@ void rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp, *last;
 
+	(void)line_number;
+
 	/* Check if the stack is empty or has only one element */
 	if (*stack == NULL || (*stack)->next == NULL)
 		return;
