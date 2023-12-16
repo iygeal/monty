@@ -16,6 +16,8 @@ void rotl(stack_t **stack, unsigned int line_number)
 	/* Save the current top of the stack in temp */
 	temp = *stack;
 
+	(void)line_number;
+
 	/* Update the stack to point to the second element */
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL; /* Disconnect temp from the new top */
